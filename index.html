@@ -22,9 +22,12 @@
         <div class="row">
             <aside class="col-3">
                 <h2>Search for a City:</h2>
+                <!-- Need to Capture this Value -->
                 <input type="text" class="form-control" id="searchedCity" placeholder="Tampa">
+                <!-- Need a click event for this  -->
                 <button class="searchBtn w-100">Search</button>
                 <div class="line"></div>
+                <!-- I will take the captured value & using the Click event I will append a button -->
                 <div class="historyBtnSection">
                     <button id="searchedCty" class="historyBtn w-100"></button>
                 </div>
@@ -33,9 +36,12 @@
                 <div class="row d-flex flex-column">
                     <div class="currentWeather col">
                         <div class="d-inline-flex">
+                            <!-- .textContent the Captured Value -->
                             <h2>Atlanta </h2>
+                            <!-- Append the Current Date -->
                             <h2>(6/12/2023)</h2>
                         </div>
+                        <!-- From the API capture the Temp, Wind 7 Humidity -->
                         <p>Temp:</p>
                         <p>Wind:</p>
                         <p>Humidity:</p>
