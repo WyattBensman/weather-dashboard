@@ -6,8 +6,23 @@ let apiKey = '8991a5a08a579f8f779c2c15d485fec3';
 let baseURL = 'https://api.openweathermap.org/data/2.5'
 let history = [];
 
+// Elements
+let searchedCity = document.querySelector('#searchedCity')
+let userForm = document.querySelector('.userForm')
+
+// Grab the User Input
+let formSubmitHandler = (e) => {
+    e.preventDefault();
+
+    let city = searchedCity.value.trim();
+    console.log(city);
+}
+
+userForm.addEventListener('submit', formSubmitHandler);
+
 // Function: Display Search History
 // Loop over the History Array & count down so most recent serach is at the top
+
 
 // Function: Update the search history in local storage
 

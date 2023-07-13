@@ -23,13 +23,16 @@
             <aside class="col-3">
                 <h2>Search for a City:</h2>
                 <!-- Need to Capture this Value -->
-                <input type="text" class="form-control" id="searchedCity" placeholder="Tampa">
-                <!-- Need a click event for this  -->
-                <button class="searchBtn w-100">Search</button>
+                <form class="userForm">
+                    <input type="text" class="form-control" id="searchedCity" placeholder="Tampa">
+                    <!-- Need a click event for this  -->
+                    <button type="submit" class="searchBtn w-100">Search</button>
+                </form>
                 <div class="line"></div>
                 <!-- I will take the captured value & using the Click event I will append a button -->
                 <div class="historyBtnSection">
-                    <button id="searchedCty" class="historyBtn w-100"></button>
+                    <!-- This won't be on the screen until I receive a search -->
+                    <button id="searchedCity" class="historyBtn w-100"></button>
                 </div>
             </aside>
             <div class="col-8">
@@ -37,7 +40,7 @@
                     <div class="currentWeather col">
                         <div class="d-inline-flex">
                             <!-- .textContent the Captured Value -->
-                            <h2>Atlanta </h2>
+                            <h2>Atlanta</h2>
                             <!-- Append the Current Date -->
                             <h2>(6/12/2023)</h2>
                         </div>
