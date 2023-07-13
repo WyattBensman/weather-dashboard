@@ -32,7 +32,7 @@
                 <!-- I will take the captured value & using the Click event I will append a button -->
                 <div class="historyBtnSection">
                     <!-- This won't be on the screen until I receive a search -->
-                    <button id="searchedCity" class="historyBtn w-100"></button>
+                    <button id="searchedCityBtn" class="historyBtn w-100"></button>
                 </div>
             </aside>
             <div class="col-8">
@@ -51,14 +51,7 @@
                     </div>
                     <div class="col mt-3">
                         <h3>5-Day Forecast:</h3>
-                        <div class="row d-flex">
-                            <div class="card col mx-2">
-                                <h6 id="fiveDayDate">9/13/2023</h6>
-                                <p id="weatherIcon"></p>
-                                <p id="fiveDayTemp"></p>
-                                <p id="fiveDayWind"></p>
-                                <p id="fiveDayHumidity"></p>
-                            </div>
+                        <div id="forecastContainer" class="row d-flex">
                         </div>
                     </div>
                 </div>
