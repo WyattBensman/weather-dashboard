@@ -128,18 +128,22 @@ function fetchFiveDay(city) {
             // Grab the Weather Data
             const firstFiveForecasts = data.list.slice(0, 5);
 
-            firstFiveForecasts.forEach(forecast => {
+            firstFiveForecasts.forEach((forecast, index) => {
                 const temp = Math.round((forecast.main.temp - 273.15) * 9 / 5 + 32);
                 const weatherIcon = forecast.weather[0].icon;
                 const wind = forecast.wind.speed;
                 const humidity = forecast.main.humidity;
                 const date = new Date(forecast.dt * 1000).toLocaleDateString();
 
+                const currentDate = new Date();
+                currentDate.setDate(currentDate.getDate() + index + 1);
+                const currentDateString = currentDate.toLocaleDateString();
+
                 // Append the card onto page
                 const forecastCard = document.createElement('div');
                 forecastCard.classList.add('card', 'col', 'mx-2');
                 forecastCard.innerHTML = `
-                <h6 id="fiveDayDate">9/13/2023</h6>
+                <h6 id="fiveDayDate">${currentDateString}</h6>
                 <p><img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="Weather Icon"></p>
                 <p>Temperature: ${temp} °F</p>
                 <p>Wind: ${wind} MPH</p>
