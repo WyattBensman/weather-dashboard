@@ -34,9 +34,13 @@ header {
 /* Weather Containers */
 .currentWeather {
     border: 1px solid black;
-    height: fit-content;
+    height: 180px;
 }
 
 .currentWeather div {
     margin-top: 10px;
+}
+
+.weatherBox {
+    background-color: #251360 !important;
 }
