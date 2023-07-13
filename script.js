@@ -38,7 +38,20 @@ let formSubmitHandler = (e) => {
     }
 }
 
+// When Search Button [Form] is Clicked [Submitted]
 userForm.addEventListener('submit', formSubmitHandler);
+
+
+// Get the current date
+let currentDate = new Date();
+
+// Extract the day, month, and year from the current date
+let day = currentDate.getDate();
+let month = currentDate.getMonth() + 1; // Note: Months are zero-based (0-January, 1-February, etc.)
+let year = currentDate.getFullYear();
+
+// Format the date as "MM/DD/YYYY"
+let formattedDate = ` (${month}/${day}/${year})`;
 
 
 // Top Fetch Weather Elements
@@ -64,6 +77,7 @@ function fetchWeather(city) {
 
             // Append the content onto page
             cityNameElement.textContent = city;
+            currentDateElement.textContent = formattedDate;
             tempElement.textContent = `Temp: ${temp} °F`;
             windElement.textContent = `Wind: ${wind} MPH`;
             humidityElement.textContent = `Humidity: ${humidity}%`
@@ -80,9 +94,9 @@ let fiveDayTemp = document.querySelector('#fiveDayTemp')
 let weatherIconElement = document.querySelector('#weatherIcon');
 let fiveDayWind = document.querySelector('#fiveDayWind');
 let fiveDayHumidity = document.querySelector('#fiveDayHumidity');
-let forecastContainer = document.querySelector('#forecastContainer')
+let forecastContainer = document.querySelector('#forecastContainer');
 
-// Clear 5-Day Forecast
+// Clear 5-Day Forecast / Clears previous Forecast
 function clearFiveDayForecast() {
     while (forecastContainer.firstChild) {
         forecastContainer.removeChild(forecastContainer.firstChild);
