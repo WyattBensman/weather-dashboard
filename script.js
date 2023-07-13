@@ -16,14 +16,22 @@ let formSubmitHandler = (e) => {
     console.log(city);
 
     if (city) {
+        // Functions to Fetch the Data
         fetchWeather(city);
         fetchFiveDay(city);
 
+        // Appends to the History Section
         const historyBtn = document.createElement('button');
         historyBtn.id = 'searchedCityBtn';
         historyBtn.classList.add('historyBtn', 'w-100');
         historyBtn.textContent = city;
         historyBtnSection.appendChild(historyBtn);
+
+        // Whenever Button is Clicked, Data is fetched
+        historyBtn.addEventListener('click', () => {
+            fetchWeather(city);
+            fetchFiveDay(city);
+        });
 
     } else {
         alert('Youre done')
@@ -120,26 +128,3 @@ function fetchFiveDay(city) {
             console.log('An error occurred', error);
         });
 }
-
-
-
-// Function: Display Search History
-// Loop over the History Array & count down so most recent serach is at the top
-
-
-// Function: Update the search history in local storage
-
-// Function: Get the search history in local storage
-
-// Function: Get the current weather data from fetch request
-
-// Function: Display 5 day forecast data from fetch request
-// need icon, temp, humidity, date, wind speed
-
-// Create elements for each of the above
-
-// Function: Display 5 day forecast data frmoo fetch request for each card
-
-// Function: Specifically for geolocation with latitude & longitude and use function above to make calls here - callback function in here
-
-// Function: Event listener for search butttoine
