@@ -22,35 +22,32 @@
         <div class="row">
             <aside class="col-3">
                 <h2>Search for a City:</h2>
-                <!-- Need to Capture this Value -->
+                <!-- Capture this Value using userForm & id searchedCity -->
                 <form class="userForm">
                     <input type="text" class="form-control" id="searchedCity" placeholder="Tampa">
-                    <!-- Need a click event for this  -->
                     <button type="submit" class="searchBtn w-100">Search</button>
                 </form>
                 <div class="line"></div>
-                <!-- I will take the captured value & using the Click event I will append a button -->
+                <!-- Append Search History Here -->
                 <div class="historyBtnSection">
-                    <!-- This won't be on the screen until I receive a search -->
                 </div>
             </aside>
             <div class="col-8">
                 <div class="row d-flex flex-column">
                     <div class="currentWeather col">
                         <div class="d-inline-flex">
-                            <!-- .textContent the Captured Value -->
+                            <!-- Grab appropriate data then append to page using .textContent -->
                             <h2 id="cityName"></h2>
-                            <!-- Append the Current Date -->
                             <h2 id="currentDate"></h2>
                             <img id="topWeatherIcon" />
                         </div>
-                        <!-- From the API capture the Temp, Wind 7 Humidity -->
                         <p id="temp"></p>
                         <p id="wind"></p>
                         <p id="humidity"></p>
                     </div>
                     <div class="col mt-3">
                         <h3>5-Day Forecast:</h3>
+                        <!-- Append Five Day Forecast Cards here -->
                         <div id="forecastContainer" class="row d-flex">
                         </div>
                     </div>
