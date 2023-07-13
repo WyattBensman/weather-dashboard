@@ -23,13 +23,16 @@
             <aside class="col-3">
                 <h2>Search for a City:</h2>
                 <!-- Need to Capture this Value -->
-                <input type="text" class="form-control" id="searchedCity" placeholder="Tampa">
-                <!-- Need a click event for this  -->
-                <button class="searchBtn w-100">Search</button>
+                <form class="userForm">
+                    <input type="text" class="form-control" id="searchedCity" placeholder="Tampa">
+                    <!-- Need a click event for this  -->
+                    <button type="submit" class="searchBtn w-100">Search</button>
+                </form>
                 <div class="line"></div>
                 <!-- I will take the captured value & using the Click event I will append a button -->
                 <div class="historyBtnSection">
-                    <button id="searchedCty" class="historyBtn w-100"></button>
+                    <!-- This won't be on the screen until I receive a search -->
+                    <button id="searchedCity" class="historyBtn w-100"></button>
                 </div>
             </aside>
             <div class="col-8">
@@ -37,17 +40,26 @@
                     <div class="currentWeather col">
                         <div class="d-inline-flex">
                             <!-- .textContent the Captured Value -->
-                            <h2>Atlanta </h2>
+                            <h2 id="cityName"></h2>
                             <!-- Append the Current Date -->
-                            <h2>(6/12/2023)</h2>
+                            <h2 id="currentDate"></h2>
                         </div>
                         <!-- From the API capture the Temp, Wind 7 Humidity -->
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidity:</p>
+                        <p id="temp"></p>
+                        <p id="wind"></p>
+                        <p id="humidity"></p>
                     </div>
                     <div class="col mt-3">
                         <h3>5-Day Forecast:</h3>
+                        <div class="row d-flex">
+                            <div class="card col mx-2">
+                                <h6 id="fiveDayDate">9/13/2023</h6>
+                                <p id="weatherIcon"></p>
+                                <p id="fiveDayTemp"></p>
+                                <p id="fiveDayWind"></p>
+                                <p id="fiveDayHumidity"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
