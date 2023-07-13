@@ -20,7 +20,7 @@ As well as a 5-day forecast for the:
 - Humidity
 
 ## Screenshot
-![FireShot Capture 008 - Document - ](https://github.com/WyattBensman/weather-dashboard/assets/126895244/c34a534c-0de1-450e-a9c6-37f6249ec634)
+![Weather-Dash-Screenshot](https://github.com/WyattBensman/weather-dashboard/assets/126895244/a9eb3344-8068-48d0-b0d1-4eec7d125676)
 
 ## Credits
 N/A
