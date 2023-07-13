@@ -16,6 +16,7 @@ let formSubmitHandler = (e) => {
 
     if (city) {
         fetchWeather(city);
+        fetchFiveDay(city);
     } else {
         alert('Youre done')
     }
@@ -47,9 +48,9 @@ function fetchWeather(city) {
 
             // Append the content onto page
             cityNameElement.textContent = city;
-            tempElement.textContent = `Temp: ${temp}`;
-            windElement.textContent = `Wind: ${wind}`;
-            humidityElement.textContent = `Humidity: ${humidity}`
+            tempElement.textContent = `Temp: ${temp} °F`;
+            windElement.textContent = `Wind: ${wind} MPH`;
+            humidityElement.textContent = `Humidity: ${humidity}%`
         })
         .catch(error => {
             console.log('An error occured', error);
@@ -63,6 +64,7 @@ let fiveDayTemp = document.querySelector('#fiveDayTemp')
 let weatherIconElement = document.querySelector('#weatherIcon');
 let fiveDayWind = document.querySelector('#fiveDayWind');
 let fiveDayHumidity = document.querySelector('#fiveDayHumidity');
+let forecastContainer = document.querySelector('#forecastContainer')
 
 // Fetch 5-Day Weather Forecast
 function fetchFiveDay(city) {
@@ -73,7 +75,7 @@ function fetchFiveDay(city) {
         .then((data) => {
             console.log(`This is the ${data}`);
 
-            // Process the Weather Data
+            // Grab the Weather Data
             const firstFiveForecasts = data.list.slice(0, 5);
 
             firstFiveForecasts.forEach(forecast => {
@@ -81,20 +83,27 @@ function fetchFiveDay(city) {
                 const weatherIcon = forecast.weather[0].icon;
                 const wind = forecast.wind.speed;
                 const humidity = forecast.main.humidity;
+                const date = new Date(forecast.dt * 1000).toLocaleDateString();
 
-                // Append the content onto page
-                fiveDayDate.textContent = temp;
-                weatherIconElement.textContent = weatherIcon;
-                fiveDayTemp.textContent = temp;
-                fiveDayWind.textContent = wind;
-                fiveDayHumidity.textContent = humidity;
+                // Append the card onto page
+                const forecastCard = document.createElement('div');
+                forecastCard.classList.add('card', 'col', 'mx-2');
+                forecastCard.innerHTML = `
+                <h6 id="fiveDayDate">9/13/2023</h6>
+                <p><img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="Weather Icon"></p>
+                <p>Temperature: ${temp} °F</p>
+                <p>Wind: ${wind} MPH</p>
+                <p>Humidity: ${humidity}%</p>
+                `
+
+                forecastContainer.appendChild(forecastCard);
             });
         })
         .catch(error => {
             console.log('An error occurred', error);
         });
 }
-fetchFiveDay('Tampa')
+
 
 
 // Function: Display Search History
