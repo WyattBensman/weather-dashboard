@@ -60,6 +60,15 @@ let currentDateElement = document.querySelector('#currentDate')
 let tempElement = document.querySelector('#temp');
 let windElement = document.querySelector('#wind');
 let humidityElement = document.querySelector('#humidity');
+let topWeatherIconElement = document.querySelector('#topWeatherIcon'); // New element for weather icon
+
+
+// Placeholder Values for No Search
+cityNameElement.textContent = 'City';
+tempElement.textContent = 'Temp: -- °F';
+windElement.textContent = 'Wind: -- MPH';
+humidityElement.textContent = 'Humidity: -- %';
+topWeatherIconElement.src = '';
 
 // Fetch Weather Data
 function fetchWeather(city) {
@@ -74,6 +83,7 @@ function fetchWeather(city) {
             const temp = Math.round((data.main.temp - 273.15) * 9 / 5 + 32);
             const wind = data.wind.speed;
             const humidity = data.main.humidity;
+            const weatherIcon = data.weather[0].icon;
 
             // Append the content onto page
             cityNameElement.textContent = city;
@@ -81,6 +91,7 @@ function fetchWeather(city) {
             tempElement.textContent = `Temp: ${temp} °F`;
             windElement.textContent = `Wind: ${wind} MPH`;
             humidityElement.textContent = `Humidity: ${humidity}%`
+            topWeatherIconElement.src = `http://openweathermap.org/img/w/${weatherIcon}.png`;
         })
         .catch(error => {
             console.log('An error occured', error);
