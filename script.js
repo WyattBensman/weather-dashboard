@@ -2,6 +2,9 @@
 // 1 for the API Key [Paste Key into this]
 // 1 for the Base URL which is the Https:.com
 // Search History Array
+let apiKey = '8991a5a08a579f8f779c2c15d485fec3';
+let baseURL = 'https://api.openweathermap.org/data/2.5'
+let history = [];
 
 // Function: Display Search History
 // Loop over the History Array & count down so most recent serach is at the top

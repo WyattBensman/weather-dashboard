@@ -6,12 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CSS Link -->
     <link rel="stylesheet" href="./styles.css">
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
+    <header class="text-center py-3">
+        <h1>Weather Dashboard</h1>
+    </header>
 
+    <main class="container-fluid ms-3 mt-3">
+        <div class="row">
+            <aside class="col-3">
+                <h2>Search for a City:</h2>
+                <input type="text" class="form-control" id="searchedCity" placeholder="Tampa">
+                <button class="searchBtn w-100">Search</button>
+                <div class="line"></div>
+                <div class="historyBtnSection">
+                    <button id="searchedCty" class="historyBtn w-100"></button>
+                </div>
+            </aside>
+            <div class="col-8">
+                <div class="row d-flex flex-column">
+                    <div class="currentWeather col">
+                        <div class="d-inline-flex">
+                            <h2>Atlanta </h2>
+                            <h2>(6/12/2023)</h2>
+                        </div>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </div>
+                    <div class="col mt-3">
+                        <h3>5-Day Forecast:</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
+    <!-- Link Bootstrap JavaScript & JQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JavaScript Link -->
     <script src="./script.js"></script>
 </body>

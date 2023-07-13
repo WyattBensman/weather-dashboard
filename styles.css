@@ -1,0 +1,42 @@
+header {
+    background: linear-gradient(to left, #251360, #465AB8);
+    color: white;
+}
+
+/* Aside */
+.searchBtn {
+    background-color: #6892e3;
+    color: white;
+    height: 37.5px;
+    border: none;
+    border-radius: .375rem;
+    margin: 15px 0;
+}
+
+.historyBtn {
+    background-color: #aeaeae;
+    color: black;
+    height: 37.5px;
+    border: none;
+    border-radius: .375rem;
+    margin-top: 15px;
+}
+
+.form-control {
+    border-color: #aeaeae !important;
+}
+
+.line {
+    height: 1px;
+    background-color: #AEAEAE;
+}
+
+/* Weather Containers */
+.currentWeather {
+    border: 1px solid black;
+    height: fit-content;
+}
+
+.currentWeather div {
+    margin-top: 10px;
+}
