@@ -6,6 +6,7 @@ let history = [];
 // Aside Elements
 let searchedCity = document.querySelector('#searchedCity')
 let userForm = document.querySelector('.userForm')
+let historyBtnSection = document.querySelector('.historyBtnSection')
 
 // Grab the User Input
 let formSubmitHandler = (e) => {
@@ -17,6 +18,13 @@ let formSubmitHandler = (e) => {
     if (city) {
         fetchWeather(city);
         fetchFiveDay(city);
+
+        const historyBtn = document.createElement('button');
+        historyBtn.id = 'searchedCityBtn';
+        historyBtn.classList.add('historyBtn', 'w-100');
+        historyBtn.textContent = city;
+        historyBtnSection.appendChild(historyBtn);
+
     } else {
         alert('Youre done')
     }
@@ -66,9 +74,18 @@ let fiveDayWind = document.querySelector('#fiveDayWind');
 let fiveDayHumidity = document.querySelector('#fiveDayHumidity');
 let forecastContainer = document.querySelector('#forecastContainer')
 
+// Clear 5-Day Forecast
+function clearFiveDayForecast() {
+    while (forecastContainer.firstChild) {
+        forecastContainer.removeChild(forecastContainer.firstChild);
+    }
+}
+
 // Fetch 5-Day Weather Forecast
 function fetchFiveDay(city) {
     const fiveDayUrl = `${baseURL}/forecast?q=${city}&appid=${apiKey}`;
+
+    clearFiveDayForecast();
 
     fetch(fiveDayUrl)
         .then(response => response.json())
